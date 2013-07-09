@@ -50,7 +50,7 @@ class DecksController < ApplicationController
       card[:name] = card.name
       card[:strength] = card.strength
 
-      @deck.card << card
+      @deck.cards << card
     end
 
     if @deck.save
