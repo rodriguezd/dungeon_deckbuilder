@@ -13,6 +13,7 @@ class CardsController < ApplicationController
   def create
     @card = Card.new
     @card.name = params[:card][:name]
+    @card.strength = params[:card][:strength]
 
     @card.deck = Deck.find(params[:deck_id])
 
@@ -31,6 +32,7 @@ class CardsController < ApplicationController
   # GET /cards/new.json
   def new
     @card = Card.new
+    @decks = Deck.all
 
     respond_to do |format|
       format.html # new.html.erb

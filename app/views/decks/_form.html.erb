@@ -12,13 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name  %><br />
+    <%= f.text_field :name  %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
+
+<h3>Cards</h3>
+  <% 5.times do %>
+  <div class="field">
+    <%= label_tag 'cards[][name]', 'Name: ' %>
+    <%= text_field_tag 'cards[][name]' %>
+    <%= label_tag 'cards[][strength]', 'Strength: ' %>
+    <%= number_field_tag 'cards[][strength]' %>
+  </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

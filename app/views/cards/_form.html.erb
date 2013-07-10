@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= label_tag 'card[name]', 'Name' %><br />
+    <%= text_field_tag 'card[name]' %>
   </div>
   <div class="field">
-    <%= f.label :strength %><br />
-    <%= f.number_field :strength %>
+    <%= label_tag 'card[strength]', 'Strength' %><br />
+    <%= number_field_tag 'card[strength]' %>
   </div>
   <div class="field">
-    <%= f.label :deck_id %><br />
-    <%= f.number_field :deck_id %>
+    <%= label_tag 'deck_id', 'Deck' %><br />
+    <%= select_tag 'deck_id',  options_for_select(@decks.map{|deck| [deck.name, deck.id]})%>
   </div>
   <div class="actions">
     <%= f.submit %>
